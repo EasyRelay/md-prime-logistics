@@ -1,31 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Cookie, Settings, CheckCircle } from 'lucide-react';
+import { useEffect } from 'react';
+import { Cookie } from 'lucide-react';
 
 const CookiePolicy = () => {
-  const [preferences, setPreferences] = useState({
-    essential: true,
-    analytics: false,
-    marketing: false
-  });
 
-  const handlePreferenceChange = (type: keyof typeof preferences) => {
-    if (type === 'essential') return; // Essential cookies cannot be disabled
-    
-    setPreferences(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
-  };
 
   useEffect(() => {
     window.scroll(0,0);
   });
-
-  const savePreferences = () => {
-    // Save preferences to localStorage or send to server
-    localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
-    alert('Cookie preferences saved successfully!');
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 animate-fade-in">
