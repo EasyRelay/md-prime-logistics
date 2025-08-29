@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Truck, Package, Route, CheckCircle } from 'lucide-react';
+import { useEffect } from 'react';
 
 const Home = () => {
   const services = [
@@ -27,6 +28,10 @@ const Home = () => {
     'Nationwide Coverage',
     'Professional Drivers'
   ];
+
+  useEffect(() => {
+    window.scroll(0,0);
+  })
 
   return (
     <div className="min-h-screen">
