@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Truck, Package, Route, CheckCircle } from 'lucide-react';
 import { useEffect } from 'react';
+import { AnimatedSection } from './AnimatedSection';
 
 const Home = () => {
   const services = [
@@ -31,36 +32,36 @@ const Home = () => {
 
   useEffect(() => {
     window.scroll(0, 0);
-  })
+  }, []);
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-800 via-slate-700 to-teal-800 text-white py-20 relative overflow-hidden">
+      <AnimatedSection className="bg-gradient-to-br from-slate-800 via-slate-700 to-teal-800 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center relative z-10">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-up">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Your Reliable <span className="text-cyan-400">Logistics Partner</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+            <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
               Professional freight transportation and logistics solutions across the United States.
               Licensed, insured, and committed to excellence.
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-500 text-white font-semibold rounded-lg hover:from-teal-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl animate-fade-in-up animation-delay-400 hover:animate-pulse"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-500 text-white font-semibold rounded-lg hover:from-teal-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:animate-pulse"
             >
               Contact Us Today
             </a>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* About Us Section */}
-      <section className="py-16 bg-gray-50 animate-fade-in">
+      <AnimatedSection className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">About MD Prime Logistics LLC</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               A trusted logistics company providing reliable transportation services with a commitment to safety,
@@ -69,40 +70,44 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in-left">
+            <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-200">
+                <AnimatedSection delay={200} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                   <h3 className="font-semibold text-slate-800 mb-2">MC Number</h3>
                   <p className="text-2xl font-bold text-teal-600">1477633</p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-300">
+                </AnimatedSection>
+                <AnimatedSection delay={300} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                   <h3 className="font-semibold text-slate-800 mb-2">DOT Number</h3>
                   <p className="text-2xl font-bold text-teal-600">3961635</p>
-                </div>
+                </AnimatedSection>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-400">
+              <AnimatedSection delay={400} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 <h3 className="font-semibold text-slate-800 mb-2">EIN</h3>
                 <p className="text-2xl font-bold text-teal-600">99-4506377</p>
-              </div>
+              </AnimatedSection>
             </div>
 
-            <div className="space-y-6 animate-fade-in-right">
+            <div className="space-y-6">
               <h3 className="text-2xl font-bold text-slate-800">Why Choose Us?</h3>
               <div className="grid grid-cols-2 gap-4">
                 {features.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-2 animate-fade-in-up hover:scale-105 transition-transform duration-300" style={{ animationDelay: `${600 + index * 100}ms` }}>
-                    <CheckCircle className="h-5 w-5 text-teal-600 animate-bounce-subtle" />
+                  <AnimatedSection 
+                    key={index} 
+                    delay={600 + index * 100}
+                    className="flex items-center space-x-2 hover:scale-105 transition-transform duration-300"
+                  >
+                    <CheckCircle className="h-5 w-5 text-teal-600" />
                     <span className="text-gray-700">{feature}</span>
-                  </div>
+                  </AnimatedSection>
                 ))}
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Company Overview Section (Zig-Zag Layout) */}
-      <section className="py-20 bg-white animate-fade-in">
+      <AnimatedSection className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {/* Block 1 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -111,17 +116,21 @@ const Home = () => {
               <p className="text-lg text-gray-700 leading-relaxed">
                 At <span className="font-semibold text-teal-600">MD Prime Logistics LLC</span>,
                 we believe logistics is more than just moving goods from one place to another —
-                it’s about building trust, ensuring reliability, and delivering value to our clients.
+                it's about building trust, ensuring reliability, and delivering value to our clients.
                 Our mission is to simplify transportation with innovative solutions, advanced technology,
                 and a dedicated team that understands the challenges of modern supply chains.
               </p>
             </div>
-            <img src="/owerview-images/who-we-are.png" alt="Who we are" className="rounded-lg shadow-lg" />
+            <AnimatedSection delay={200}>
+              <img src="/owerview-images/who-we-are.png" alt="Who we are" className="rounded-lg shadow-lg" />
+            </AnimatedSection>
           </div>
 
           {/* Block 2 (reversed) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <img src="/owerview-images/our-commitement.png" alt="Our commitment" className="rounded-lg shadow-lg order-1 lg:order-2" />
+            <AnimatedSection delay={200} className="order-1 lg:order-2">
+              <img src="/owerview-images/our-commitement.png" alt="Our commitment" className="rounded-lg shadow-lg" />
+            </AnimatedSection>
             <div className="order-2 lg:order-2">
               <h2 className="text-3xl font-bold text-slate-800 mb-6">Our Commitment</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -144,15 +153,17 @@ const Home = () => {
                 to helping your business grow.
               </p>
             </div>
-            <img src="/owerview-images/trusted-partner.png" alt="Trusted partner" className="rounded-lg h-100 w-full shadow-lg" />
+            <AnimatedSection delay={200}>
+              <img src="/owerview-images/trusted-partner.png" alt="Trusted partner" className="rounded-lg h-100 w-full shadow-lg" />
+            </AnimatedSection>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50 animate-fade-in">
+      <AnimatedSection className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Our Services</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Comprehensive logistics solutions designed to meet your transportation and supply chain needs.
@@ -161,79 +172,78 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div
+              <AnimatedSection
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-4 hover:scale-105 border border-gray-100 animate-fade-in-up group"
-                style={{ animationDelay: `${200 + index * 200}ms` }}
+                delay={200 + index * 200}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-4 hover:scale-105 border border-gray-100 group"
               >
                 <div className="text-teal-600 mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">{service.icon}</div>
                 <h3 className="text-xl font-bold text-slate-800 mb-4">{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{service.description}</p>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Testimonial Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-gray-100 animate-fade-in">
+      <AnimatedSection className="py-20 bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">What Our Clients Say</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Don’t just take our word for it — here’s what our customers are saying about
+              Don't just take our word for it — here's what our customers are saying about
               <span className="font-semibold text-teal-600"> MD Prime Logistics</span>.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in-up transform hover:-translate-y-2">
+            <AnimatedSection delay={0} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
               <p className="text-gray-700 mb-6 leading-relaxed">
-                “MD Prime Logistics has been a game-changer for our supply chain.
-                Always on time, professional drivers, and fantastic communication!”
+                "MD Prime Logistics has been a game-changer for our supply chain.
+                Always on time, professional drivers, and fantastic communication!"
               </p>
               <div className="flex items-center space-x-4">
                 <div>
                   <h4 className="font-semibold text-slate-800">Sarah Johnson</h4>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
 
             {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in-up transform hover:-translate-y-2 animation-delay-200">
+            <AnimatedSection delay={200} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
               <p className="text-gray-700 mb-6 leading-relaxed">
-                “Their dispatch services have helped us cut costs and improve delivery times.
-                Highly recommend them for any logistics needs.”
+                "Their dispatch services have helped us cut costs and improve delivery times.
+                Highly recommend them for any logistics needs."
               </p>
               <div className="flex items-center space-x-4">
                 <div>
                   <h4 className="font-semibold text-slate-800">Michael Carter</h4>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
 
             {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in-up transform hover:-translate-y-2 animation-delay-400">
+            <AnimatedSection delay={400} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
               <p className="text-gray-700 mb-6 leading-relaxed">
-                “Excellent customer service and real-time tracking made the whole process stress-free.
-                We’ve finally found a logistics partner we can trust.”
+                "Excellent customer service and real-time tracking made the whole process stress-free.
+                We've finally found a logistics partner we can trust."
               </p>
               <div className="flex items-center space-x-4">
                 <div>
                   <h4 className="font-semibold text-slate-800">Emily Rodriguez</h4>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
-      </section>
-
+      </AnimatedSection>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gray-50 animate-fade-in">
+      <AnimatedSection id="contact" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Get In Touch</h2>
             <p className="text-lg text-gray-600">
               Ready to streamline your logistics? Contact us today for a consultation.
@@ -242,21 +252,21 @@ const Home = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div className="space-y-8 animate-fade-in-left">
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-200">
+            <div className="space-y-8">
+              <AnimatedSection delay={200} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 <div className="flex items-center space-x-4 mb-4">
-                  <MapPin className="h-6 w-6 text-teal-600 animate-bounce-subtle" />
+                  <MapPin className="h-6 w-6 text-teal-600" />
                   <h3 className="text-lg font-semibold text-slate-800">Address</h3>
                 </div>
                 <p className="text-gray-600 ml-10">
                   5960 Fairview Rd, Suite 400<br />
                   Charlotte, NC 28210
                 </p>
-              </div>
+              </AnimatedSection>
 
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-300">
+              <AnimatedSection delay={300} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 <div className="flex items-center space-x-4 mb-4">
-                  <Phone className="h-6 w-6 text-teal-600 animate-bounce-subtle" />
+                  <Phone className="h-6 w-6 text-teal-600" />
                   <h3 className="text-lg font-semibold text-slate-800">Phone</h3>
                 </div>
                 <a
@@ -265,11 +275,11 @@ const Home = () => {
                 >
                   (443) 625-1223
                 </a>
-              </div>
+              </AnimatedSection>
 
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-400">
+              <AnimatedSection delay={400} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                 <div className="flex items-center space-x-4 mb-4">
-                  <Mail className="h-6 w-6 text-teal-600 animate-bounce-subtle" />
+                  <Mail className="h-6 w-6 text-teal-600" />
                   <h3 className="text-lg font-semibold text-slate-800">Email</h3>
                 </div>
                 <a
@@ -278,10 +288,10 @@ const Home = () => {
                 >
                   dispatch@mdprimelogistics.com
                 </a>
-              </div>
+              </AnimatedSection>
             </div>
 
-            <div className="relative flex justify-center">
+            <AnimatedSection delay={500} className="relative flex justify-center">
               {/* Image */}
               <img
                 src="image.png"
@@ -291,10 +301,10 @@ const Home = () => {
 
               {/* Overlay (shadow) */}
               <div className="absolute inset-0 bg-black/20 rounded-md transition-opacity duration-300 opacity-100"></div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </div>
   );
 };
