@@ -30,7 +30,7 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    window.scroll(0,0);
+    window.scroll(0, 0);
   })
 
   return (
@@ -101,8 +101,56 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Company Overview Section (Zig-Zag Layout) */}
+      <section className="py-20 bg-white animate-fade-in">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+          {/* Block 1 */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-800 mb-6">Who We Are</h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At <span className="font-semibold text-teal-600">MD Prime Logistics LLC</span>,
+                we believe logistics is more than just moving goods from one place to another —
+                it’s about building trust, ensuring reliability, and delivering value to our clients.
+                Our mission is to simplify transportation with innovative solutions, advanced technology,
+                and a dedicated team that understands the challenges of modern supply chains.
+              </p>
+            </div>
+            <img src="/owerview-images/who-we-are.png" alt="Who we are" className="rounded-lg shadow-lg" />
+          </div>
+
+          {/* Block 2 (reversed) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <img src="/owerview-images/our-commitement.png" alt="Our commitment" className="rounded-lg shadow-lg order-1 lg:order-2" />
+            <div className="order-2 lg:order-2">
+              <h2 className="text-3xl font-bold text-slate-800 mb-6">Our Commitment</h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                From small businesses to large enterprises, we partner with organizations of all sizes
+                to provide seamless freight management, nationwide coverage, and unmatched customer support.
+                Our team of professional drivers and dispatchers work around the clock to ensure your freight
+                is delivered on time, every time.
+              </p>
+            </div>
+          </div>
+
+          {/* Block 3 */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-800 mb-6">Trusted Partner</h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                As a fully licensed and insured carrier, we are committed to maintaining the highest
+                safety standards while offering competitive pricing. With MD Prime Logistics,
+                you gain more than a logistics provider — you gain a trusted partner dedicated
+                to helping your business grow.
+              </p>
+            </div>
+            <img src="/owerview-images/trusted-partner.png" alt="Trusted partner" className="rounded-lg h-100 w-full shadow-lg" />
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section className="py-16 bg-white animate-fade-in">
+      <section className="py-16 bg-gray-50 animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Our Services</h2>
@@ -126,6 +174,61 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonial Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-gray-100 animate-fade-in">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">What Our Clients Say</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Don’t just take our word for it — here’s what our customers are saying about
+              <span className="font-semibold text-teal-600"> MD Prime Logistics</span>.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in-up transform hover:-translate-y-2">
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                “MD Prime Logistics has been a game-changer for our supply chain.
+                Always on time, professional drivers, and fantastic communication!”
+              </p>
+              <div className="flex items-center space-x-4">
+                <div>
+                  <h4 className="font-semibold text-slate-800">Sarah Johnson</h4>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in-up transform hover:-translate-y-2 animation-delay-200">
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                “Their dispatch services have helped us cut costs and improve delivery times.
+                Highly recommend them for any logistics needs.”
+              </p>
+              <div className="flex items-center space-x-4">
+                <div>
+                  <h4 className="font-semibold text-slate-800">Michael Carter</h4>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in-up transform hover:-translate-y-2 animation-delay-400">
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                “Excellent customer service and real-time tracking made the whole process stress-free.
+                We’ve finally found a logistics partner we can trust.”
+              </p>
+              <div className="flex items-center space-x-4">
+                <div>
+                  <h4 className="font-semibold text-slate-800">Emily Rodriguez</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-16 bg-gray-50 animate-fade-in">

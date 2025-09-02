@@ -21,11 +21,24 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex relative items-center space-x-2 group">
-            <div className="rounded-xl group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
-              <img src='logo/image.png' alt='image' className="border-2 rounded-xl h-14 w-48 text-white" />
-              <div className='absolute inset-0 bg-black/5 rounded-xl transition-opacity duration-200 opacity-50'></div>
+            <div className="rounded-xl transition-all duration-300">
+              <img
+                src="logo/image.png"
+                alt="MD Prime Logistics"
+                className="
+                  h-12 w-44
+                  rounded-xl 
+                  border border-gray-200 
+                  shadow-md 
+                  bg-white 
+                  p-1
+                  transition-all duration-300
+                  hover:shadow-xl 
+                  hover:scale-105 
+                  hover:border-teal-400
+                "
+              />
             </div>
-            {/* <span className="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors duration-300">MD Prime Logistics LLC</span> */}
           </Link>
 
           {/* Desktop Navigation */}
